@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Button?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.aoim_plz_dzialaj.HelloController"   >
+    <top>
+        <VBox spacing="10.0">
+            <Label text="Employee and Group Management" />
+            <HBox spacing="10.0">
+                <TextField fx:id="_textfilter" promptText="Filter employees..." HBox.hgrow="ALWAYS" />
+            </HBox>
+        </VBox>
+    </top>
+
+    <center>
+        <HBox spacing="10.0" VBox.vgrow="ALWAYS">
+            <!-- Employees Section -->
+            <VBox spacing="10.0" VBox.vgrow="ALWAYS">
+                <Label text="Employees" />
+                <TableView fx:id="employeeTable" prefHeight="200.0" prefWidth="600.0" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="firstNameCol" text="First Name" prefWidth="120"/>
+                        <TableColumn fx:id="lastNameCol" text="Last Name" prefWidth="120"/>
+                        <TableColumn fx:id="conditionCol" text="Condition" prefWidth="120"/>
+                        <TableColumn fx:id="birthYearCol" text="Birth Year" prefWidth="120"/>
+                        <TableColumn fx:id="salaryCol" text="Salary" prefWidth="120"/>
+                    </columns>
+                </TableView>
+                <!-- Employee Buttons -->
+                <HBox spacing="10.0">
+                    <Button onAction="#addEmployee" text="Add" fx:id="addEmployeeButton" />
+                    <Button onAction="#modifyEmployee" text="Modify" fx:id="modifyEmployeeButton" />
+                    <Button onAction="#deleteEmployee" text="Delete" fx:id="deleteEmployeeButton" />
+                </HBox>
+            </VBox>
+
+            <!-- Employee Groups Section -->
+            <VBox spacing="10.0" VBox.vgrow="ALWAYS">
+                <Label text="Employee Groups" />
+                <TableView fx:id="groupTable" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="groupNameCol" text="Group Name" prefWidth="100"/>
+                        <TableColumn fx:id="maxEmployeesCol" text="Size" prefWidth="100"/>
+                    </columns>
+                </TableView>
+                <!-- Group Buttons -->
+                <HBox spacing="10.0">
+                    <Button onAction="#addGroup" text="Add" fx:id="addGroupButton" />
+                    <Button onAction="#modifyGroup" text="Modify" fx:id="modifyGroupButton" />
+                    <Button onAction="#deleteGroup" text="Delete" fx:id="deleteGroupButton" />
+                </HBox>
+            </VBox>
+        </HBox>
+    </center>
+</BorderPane>
